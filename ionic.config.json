@@ -1,0 +1,7 @@
+{
+  "name": "paes-caseiros-shirley",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
