@@ -1,13 +1,90 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-        Beliscão de Goiabada
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-    <ion-list no-lines>
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">{{ item }}</button>
-    </ion-list>
+  <ion-card>
+    <ion-card-header>
+      <h1>Equipe de produção</h1>
+      <h2>Turma Programador Web 2018</h2>
+      <img src="assets/imgs/senac-taboao.jpg" alt="" width="30em" height="auto"/>
+    </ion-card-header>
+  </ion-card>
+    <!--Card Weslly-->
+    <ion-card>
+        <ion-card-header>
+          {{ nomes[0] }}
+        </ion-card-header>
+        <ion-card-content>
+              <button ion-button large>
+                <ion-icon name="logo-facebook" (click)="abrirFace(0)"></ion-icon>
+              </button>
+              <button ion-button large>
+                  <ion-icon name="logo-linkedin" (click)="abrirTwit(0)"></ion-icon>
+              </button>
+              <button ion-button large>
+                  <ion-icon name="link" (click)="abrirLink(0)"></ion-icon>
+                </button>
+              <button ion-button large>
+                  <ion-icon name="logo-whatsapp" (click)="abrirWhats(0)"></ion-icon>
+              </button>
+        </ion-card-content>
+      </ion-card>
+  <!--Card Paulo-->
+  <ion-card>
+        <ion-card-header>
+          {{ nomes[1] }}
+        </ion-card-header>
+        <ion-card-content>
+              <button ion-button large>
+                <ion-icon name="logo-facebook" (click)="abrirFace(1)"></ion-icon>
+              </button>
+              <button ion-button large>
+                  <ion-icon name="logo-twitter" (click)="abrirTwit(1)"></ion-icon>
+              </button>
+              <button ion-button large>
+                  <ion-icon name="link" (click)="abrirLink(1)"></ion-icon>
+                </button>
+              <button ion-button large>
+                  <ion-icon name="logo-whatsapp" (click)="abrirWhats(1)"></ion-icon>
+              </button>
+        </ion-card-content>
+      </ion-card>
+  <!--Card Meire-->
+  <ion-card>
+      <ion-card-header>
+        {{ nomes[2] }}
+      </ion-card-header>
+      <ion-card-content>
+            <button ion-button large>
+              <ion-icon name="logo-facebook" (click)="abrirFace(2)"></ion-icon>
+            </button>
+            <button ion-button large>
+                <ion-icon name="logo-twitter" (click)="abrirTwit(2)"></ion-icon>
+            </button>
+            <button ion-button large>
+                <ion-icon name="link" (click)="abrirLink(2)"></ion-icon>
+              </button>
+            <button ion-button large>
+                <ion-icon name="logo-whatsapp" (click)="abrirWhats(2)"></ion-icon>
+            </button>
+      </ion-card-content>
+    </ion-card>
+  <!--Card Ronaldo-->
+  <ion-card>
+      <ion-card-header>
+        {{ nomes[3] }}
+      </ion-card-header>
+      <ion-card-content>
+            <button ion-button large>
+              <ion-icon name="logo-facebook" (click)="abrirFace(3)"></ion-icon>
+            </button>
+            <button ion-button large>
+                <ion-icon name="logo-twitter" (click)="abrirTwit(3)"></ion-icon>
+            </button>
+            <button ion-button large>
+                <ion-icon name="link" (click)="abrirLink(3)"></ion-icon>
+              </button>
+            <button ion-button large>
+                <ion-icon name="logo-whatsapp" (click)="abrirWhats(3)"></ion-icon>
+            </button>
+      </ion-card-content>
+    </ion-card>
+
 </ion-content>

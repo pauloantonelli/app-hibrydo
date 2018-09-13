@@ -1,0 +1,14 @@
+page-compras {
+    ion-title, h1{
+        text-align: center;
+    }
+    .input-ios, .input-md, .input-wp{
+        //background-color: red;
+    }
+    ::-webkit-input-placeholder{
+        text-align: center;
+    }
+    .note-ios, .note-md, .note-wp{
+        color: red;
+    }
+}

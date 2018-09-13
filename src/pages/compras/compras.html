@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><img [src]="logo" alt=""/></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1>Compras</h1>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Farinhas</ion-label>
+      <ion-input type="number" placeholder="Kilos" clearInput="true"></ion-input>
+      <ion-input type="number" placeholder="R$" clearInput="true"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label stacked>Leite</ion-label>
+      <ion-input type="number" placeholder="Litros" clearInput="true"></ion-input>
+      <ion-input type="number" placeholder="R$" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Açúcar</ion-label>
+      <ion-input type="number" placeholder="Gramas" clearInput="true"></ion-input>
+      <ion-input type="number" placeholder="R$" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Ovos</ion-label>
+      <ion-input type="number" placeholder="Unidades" clearInput="true"></ion-input>
+      <ion-input type="number" placeholder="R$" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Embalagem</ion-label>
+      <ion-input type="number" placeholder="Unidades" clearInput="true"></ion-input>
+      <ion-input type="number" placeholder="R$" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-note item-end>*numero aproximado</ion-note>
+  </ion-list>
+
+  <button ion-button block>Atualizar</button>
+</ion-content>

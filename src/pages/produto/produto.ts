@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
-import { ContactPage } from '../contact/contact';
+
+import { ReceitaPage } from '../receita/receita';
+import { IngredientePage } from '../ingrediente/ingrediente';
+import { RelatorioCustoPage } from '../relatorio-custo/relatorio-custo';
 
 @IonicPage()
 @Component({
@@ -9,8 +11,8 @@ import { ContactPage } from '../contact/contact';
   templateUrl: 'produto.html',
 })
 export class ProdutoPage {
-  public item = ['Receita','Ver/Editar', 'Calculos','Ingredientes','Relatio de Custo', 'Ver'];
-  public pg = [HomePage,ContactPage];
+  public item = ['Receita','Ver/Editar', 'Calculos','Ingredientes','Relatório de Custo', 'Ver'];
+  public pg = [ReceitaPage,IngredientePage,RelatorioCustoPage];
   public produto = "Beliscao de Goiabada";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -19,7 +21,7 @@ export class ProdutoPage {
     this.navCtrl.push(pg);
   }
   ionViewDidEnter() {
-    
+  
   }
 
 }

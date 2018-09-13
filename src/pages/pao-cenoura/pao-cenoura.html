@@ -1,0 +1,118 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Receita {{ titulo }}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+  <!--Receita-->
+  <ion-card>
+    <img src='{{imagens[image]}}' />
+    <ion-card-content>
+      <ion-card-title>
+        titulo
+      </ion-card-title>
+      <p>
+        conteudo
+      </p>
+    </ion-card-content>
+    <ion-card-header>
+      Editar a receita titulo
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-textarea placeholder="Escreva a nova receita aqui: "></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+    <button ion-button>editar</button>
+  </ion-card>
+  <!--Ingredientes-->
+  <ion-list padding>
+    <ion-card-header>
+      Ingredientes Receita:
+    </ion-card-header>
+    <ion-item>
+      <ion-label floating>Óleo (ml)</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Açúcar (gramas)</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Agua morna (gramas)</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Ovos (unidade)</ion-label>
+      <ion-input type="number" placeholder="incluindo os usados para pincelar"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Sal (gramas)</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Cenouras cozidas (kg)</ion-label>
+      <ion-input type="number" placeholder="ex: 1.25"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Fermento (gramas)</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Farinha de trigo (ml)</ion-label>
+      <ion-input type="number" placeholder="acima de 1kg coloque 1000gr"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Goiabada (gramas)</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+  </ion-list>
+  <!--Relatorio de custo-->
+  <ion-list padding>
+
+    <ion-card>
+      <ion-card-header>
+        Custos Totais:
+      </ion-card-header>
+      <ion-card-content>
+        Despesas de Ingredientes: R$
+      </ion-card-content>
+      <hr />
+      <ion-card-content>
+        Despesas de Custos: R$
+      </ion-card-content>
+      <hr />
+      <ion-card-content>
+        Custo de Produção: R$
+      </ion-card-content>
+      <hr />
+      <ion-card-content>
+        Lucro Apurado: R$
+      </ion-card-content>
+      <hr />
+      <ion-card-content>
+        Rendimento por Receita: R$
+      </ion-card-content>
+      <hr />
+      <ion-card-content>
+        Média de Unidades Vendidas: R$
+      </ion-card-content>
+      <hr />
+      <ion-card-content>
+        Taxa de Entrega: R$
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      Lucro por Venda
+    </ion-card-header>
+
+    <ion-card-content>
+      R$
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
