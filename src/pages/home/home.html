@@ -8,142 +8,129 @@
   <ion-list>
     <ion-item>
       <ion-thumbnail item-start>
-        <img src="assets/imgs/beliscao-goiabada.jpg">
+        <img [src]="img[0]"/>
       </ion-thumbnail>
-      <h2>Beliscão de Goiabada</h2>
-      <button ion-button clear item-end><a (click)="gotoPage('ProdutoPage', 0)">Ver</a></button>
+      <h2>{{pgNome[0]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[0])">Ver</a></button>
     </ion-item>
   </ion-list>
   <hr/>
   <ion-list>
     <ion-item>
       <ion-thumbnail item-start>
-        <img src="assets/imgs/biscoito-amanteigado.jpg">
+        <img [src]="img[1]"/>
       </ion-thumbnail>
-      <h2>Biscoito Amanteigado</h2>
-      <button ion-button clear item-end>ver</button>
+      <h2>{{pgNome[1]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[1])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[2]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[2]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[2])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[3]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[3]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[3])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[4]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[4]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[4])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[5]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[5]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[5])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[6]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[6]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[6])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[7]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[7]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[7])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[8]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[8]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[8])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[9]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[9]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[9])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[10]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[10]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[10])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[11]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[11]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[11])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[12]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[12]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[12])">Ver</a></button>
+    </ion-item>
+  </ion-list>
+  <hr/><ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="img[13]"/>
+      </ion-thumbnail>
+      <h2>{{pgNome[13]}}</h2>
+      <button ion-button clear item-end><a (click)="gotoPage(pg[13])">Ver</a></button>
     </ion-item>
   </ion-list>
   <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-caseiro.jpg">
-      </ion-thumbnail>
-      <h2>Pão Caseiro</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-batata.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Batata</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-beterraba.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Beterraba</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-cenoura.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Cenoura</h2>
-      <button ion-button clear item-end><a (click)="gotoPage('PaoCenouraPage', 0)">Ver</a></button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-ervas.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Ervas</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-forma.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Forma</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-fuba.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Fubá recheado com Goiabada</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-maca.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Maça</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-mandioca.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Mandioca</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-milho.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Milho</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/pao-integral.jpg">
-      </ion-thumbnail>
-      <h2>Pão de Integral</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
-  <hr/>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/rosca-estrela.jpg">
-      </ion-thumbnail>
-      <h2>Rosca Estrela</h2>
-      <button ion-button clear item-end>ver</button>
-    </ion-item>
-  </ion-list>
 </ion-content>

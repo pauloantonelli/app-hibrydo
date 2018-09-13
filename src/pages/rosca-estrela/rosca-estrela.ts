@@ -15,8 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RoscaEstrelaPage {
   public item = ['Receita','Ver/Editar', 'Calculos','Ingredientes','Relatório de Custo', 'Ver'];
-  //public pg = [ReceitaPage,IngredientePage,RelatorioCustoPage];
-  public produto = "Beliscao de Goiabada";
+  public produto = "Rosca Estrela";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
