@@ -11,9 +11,6 @@ import { PaoErvasPage } from '../pao-ervas/pao-ervas';
 import { PaoFubaRecheadoGoiabadaPage } from '../pao-fuba-recheado-goiabada/pao-fuba-recheado-goiabada';
 import { PaoMandiocaPage } from '../pao-mandioca/pao-mandioca';
 import { RoscaEstrelaPage } from '../rosca-estrela/rosca-estrela';
-import { PaoMilhoPage } from '../pao-milho/pao-milho';
-import { BeliscaoGoiabadaPage } from '../beliscao-goiabada/beliscao-goiabada';
-import { BiscoitoAmantegadoPage } from '../biscoito-amantegado/biscoito-amantegado';
 
 @Component({
   selector: 'page-home',
@@ -30,24 +27,20 @@ export class HomePage {
     PaoErvasPage,
     PaoFubaRecheadoGoiabadaPage,
     PaoMandiocaPage,
-    RoscaEstrelaPage,
-    PaoMilhoPage,
-    BeliscaoGoiabadaPage,
-    BiscoitoAmantegadoPage];
+    RoscaEstrelaPage
+    ];
     public pgNome = ['Pao de Cenoura',
     'Pao de Beterraba',
-    'Pao de Caseiro',
+    'Pao Caseiro',
     'Pao de Forma Tradicional',
     'Pao de Maca',
-    'Pao de Integral',
-    'Pao de Batata com Catupiry',
+    'Pao Integral',
+    'Pao de Batata Catupiry',
     'Pao de Ervas',
-    'Pao de Fuba Recheado com Goiabada',
+    'Pao de Fuba Recheado',
     'Pao de Mandioca',
-    'Rosca de Estrela',
-    'Pao de Milho',
-    'Beliscao de Goiabada',
-    'Biscoito Amantegado'];
+    'Rosca Estrela'
+    ];
     public img = ['assets/imgs/pao-cenoura.jpg',
     'assets/imgs/pao-beterraba.jpg',
     'assets/imgs/pao-caseiro.jpg',
@@ -58,16 +51,12 @@ export class HomePage {
     'assets/imgs/pao-ervas.jpg',
     'assets/imgs/pao-fuba.jpg',
     'assets/imgs/pao-mandioca.jpg',
-    'assets/imgs/rosca-estrela.jpg',
-    'assets/imgs/pao-milho.jpg',
-    'assets/imgs/beliscao-goiabada.jpg',
-    'assets/imgs/biscoito-amanteigado.jpg'
+    'assets/imgs/rosca-estrela.jpg'
     ];
   constructor(public navCtrl: NavController) {
 
   }
   gotoPage(pg:string){
-    console.log(pg);
     this.navCtrl.push(pg);
   }
 

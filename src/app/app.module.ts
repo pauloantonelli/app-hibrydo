@@ -1,4 +1,4 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -11,9 +11,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ProdutoPageModule } from '../pages/produto/produto.module';
-import { ReceitaPageModule } from '../pages/receita/receita.module';
-import { IngredientePageModule } from '../pages/ingrediente/ingrediente.module';
 
 import { PaoCenouraPageModule } from '../pages/pao-cenoura/pao-cenoura.module';
 import { PaoBeterrabaPageModule } from '../pages/pao-beterraba/pao-beterraba.module';
@@ -26,12 +23,13 @@ import { PaoErvasPageModule } from '../pages/pao-ervas/pao-ervas.module';
 import { PaoFubaRecheadoGoiabadaPageModule } from '../pages/pao-fuba-recheado-goiabada/pao-fuba-recheado-goiabada.module';
 import { PaoMandiocaPageModule } from '../pages/pao-mandioca/pao-mandioca.module';
 import { RoscaEstrelaPageModule } from '../pages/rosca-estrela/rosca-estrela.module';
-import { PaoMilhoPageModule } from '../pages/pao-milho/pao-milho.module';
-import { BeliscaoGoiabadaPageModule } from '../pages/beliscao-goiabada/beliscao-goiabada.module';
-import { BiscoitoAmantegadoPageModule } from '../pages/biscoito-amantegado/biscoito-amantegado.module';
-
 
 import { ConexaoProvider } from '../providers/conexao/conexao';
+import { RotasProvider } from '../providers/rotas/rotas';
+import { CalculosProvider } from '../providers/calculos/calculos';
+import { NativeStorage } from '@ionic-native/native-storage';
+import { ComprasProvider } from '../providers/compras/compras';
+import { ReceitasProvider } from '../providers/receitas/receitas';
 
 @NgModule({
   declarations: [
@@ -44,14 +42,9 @@ import { ConexaoProvider } from '../providers/conexao/conexao';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot({
-      name: 'principalBD',
-      driverOrder: ['indexeddb', 'sqlite', 'websql'],
-      storeName   : 'receitas', // Should be alphanumeric, with underscores.
+      name: 'listaReceitas',
     }),
     ComprasPageModule,
-    ProdutoPageModule,
-    ReceitaPageModule,
-    IngredientePageModule,
     //paginas dos paes
     PaoCenouraPageModule,
     PaoBeterrabaPageModule,
@@ -63,10 +56,7 @@ import { ConexaoProvider } from '../providers/conexao/conexao';
     PaoErvasPageModule,
     PaoFubaRecheadoGoiabadaPageModule,
     PaoMandiocaPageModule,
-    RoscaEstrelaPageModule,
-    PaoMilhoPageModule,
-    BeliscaoGoiabadaPageModule,
-    BiscoitoAmantegadoPageModule
+    RoscaEstrelaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -78,8 +68,14 @@ import { ConexaoProvider } from '../providers/conexao/conexao';
   providers: [
     StatusBar,
     SplashScreen,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ConexaoProvider
+    {provide: LOCALE_ID, useValue: 'pt-BR'},
+    ConexaoProvider,
+    RotasProvider,
+    CalculosProvider,
+    ComprasProvider,
+    ReceitasProvider
   ]
 })
 export class AppModule {}

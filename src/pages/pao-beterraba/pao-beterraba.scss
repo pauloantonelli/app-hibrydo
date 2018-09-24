@@ -1,3 +1,22 @@
 page-pao-beterraba {
-
+    h1, h2, ion-label{
+        text-align: center;
+    }
+    h3{
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .input-ios, .input-md, .input-wp{
+        background-color: color($colors, light);
+    }
+    div{
+        //background-color: color($colors, light);
+    }
+    ::-webkit-input-placeholder{
+        text-align: center;
+    }
+    .note-ios, .note-md, .note-wp{
+        color: red;
+    }
 }

@@ -1,12 +1,15 @@
 page-compras {
-    ion-title, h1{
+    ion-title, h1, ion-label{
         text-align: center;
     }
     .input-ios, .input-md, .input-wp{
-        //background-color: red;
+        background-color: color($colors, light);
+    }
+    div{
+        //background-color: color($colors, light);
     }
     ::-webkit-input-placeholder{
-        text-align: center;
+        //text-align: center;
     }
     .note-ios, .note-md, .note-wp{
         color: red;

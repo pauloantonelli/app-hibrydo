@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { ConexaoProvider } from '../providers/conexao/conexao';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,6 +18,19 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      /*dbProvider.criarBanco()
+      .then(()=>{
+        //alert('banco criado com sucesso');
+        this.openHomePage(splashScreen);
+      })
+      .catch(()=>{
+        alert("erro ao criar banco");
+        this.openHomePage(splashScreen);
+      })*/
     });
   }
+  /*private openHomePage(splashScreen: SplashScreen){
+    splashScreen.hide();
+    this.rootPage = TabsPage;
+  }*/
 }
