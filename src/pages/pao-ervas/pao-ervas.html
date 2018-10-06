@@ -26,7 +26,6 @@
         <h2>Ingredientes <br/> {{pagina[7]}}</h2>
     </ion-card-header>
     <div id="kilo">
-      <ion-label>{{totCompras}}</ion-label>
       <!--Gramas-->
       <ion-label stacked>{{titulo[0]}}</ion-label>
       <ion-item>
@@ -56,30 +55,6 @@
       <ion-item>
         <ion-label fixed>Gramas</ion-label>
         <ion-input type="number" placeholder="ex 5" clearInput="true" [(ngModel)]="valorCompras.alho"></ion-input>
-      </ion-item>
-
-    </div>
-    <hr />
-    <div id="litro">
-      <ion-label stacked>{{titulo[27]}}</ion-label>
-      <ion-item>
-        <ion-label fixed>ML</ion-label>
-        <ion-input type="number" placeholder="ex 2" clearInput="true" [(ngModel)]="valorCompras.oleo"></ion-input>
-      </ion-item>
-
-      <ion-label stacked>{{titulo[26]}}</ion-label>
-      <ion-item>
-        <ion-label fixed>ML</ion-label>
-        <ion-input type="number" placeholder="ex 2" clearInput="true" [(ngModel)]="valorCompras.leite"></ion-input>
-      </ion-item>
-
-      <hr/>
-    </div>
-    <div id="unidade">
-      <ion-label stacked>{{titulo[29]}}</ion-label>
-      <ion-item>
-        <ion-label fixed>Unidades</ion-label>
-        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.ovo"></ion-input>
       </ion-item>
 
       <ion-label stacked>{{titulo[30]}}</ion-label>
@@ -112,6 +87,32 @@
         <ion-input type="number" placeholder="ex 5" clearInput="true" [(ngModel)]="valorCompras.oregano"></ion-input>
       </ion-item>
 
+    </div>
+
+    <hr/>
+
+    <div id="litro">
+      <ion-label stacked>{{titulo[27]}}</ion-label>
+      <ion-item>
+        <ion-label fixed>ML</ion-label>
+        <ion-input type="number" placeholder="ex 2" clearInput="true" [(ngModel)]="valorCompras.oleo"></ion-input>
+      </ion-item>
+
+      <ion-label stacked>{{titulo[26]}}</ion-label>
+      <ion-item>
+        <ion-label fixed>ML</ion-label>
+        <ion-input type="number" placeholder="ex 2" clearInput="true" [(ngModel)]="valorCompras.leite"></ion-input>
+      </ion-item>
+
+      <hr/>
+    </div>
+    <div id="unidade">
+      <ion-label stacked>{{titulo[29]}}</ion-label>
+      <ion-item>
+        <ion-label fixed>Unidades</ion-label>
+        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.ovo"></ion-input>
+      </ion-item>
+
       <ion-label stacked>{{titulo[35]}}</ion-label>
       <ion-item>
         <ion-label fixed>Unidades</ion-label>
@@ -120,6 +121,70 @@
       <ion-note item-end>*numero de unidades aproximado</ion-note>
     </div>
   </ion-list>
+
+  <hr/>
+
+  <ion-card>
+    <ion-card-header id="ingredientes">
+      CUSTO POR INGREDIENTE
+    </ion-card-header>
+    <ion-card-content>
+      {{titulo[0]}}: R${{totIngredientes[0]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[3]}}: R${{totIngredientes[1]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[4]}}: R${{totIngredientes[2]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[12]}}: R${{totIngredientes[3]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[13]}}: R${{totIngredientes[4]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[30]}}: R${{totIngredientes[5]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[17]}}: R${{totIngredientes[6]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[18]}}: R${{totIngredientes[7]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[19]}}: R${{totIngredientes[8]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[20]}}: R${{totIngredientes[9]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[27]}}: R${{totIngredientes[10]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[26]}}: R${{totIngredientes[11]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[29]}}: R${{totIngredientes[12]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[35]}}: R${{totIngredientes[13]}}
+    </ion-card-content>
+  </ion-card>
+  
+  <hr/>
+
+  <ion-card id="total">
+    <ion-card-header>
+      CUSTO TOTAL DA RECEITA
+    </ion-card-header>
+    <ion-card-content>
+      R${{totCompras}}
+    </ion-card-content>
+  </ion-card>
+
   <button ion-button block (click)="salvarIngrediente(chave, valorCompras)">Atualizar</button>
-  <hr />
+  
+  <hr/>
+
 </ion-content>

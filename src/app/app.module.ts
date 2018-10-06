@@ -26,7 +26,6 @@ import { RoscaEstrelaPageModule } from '../pages/rosca-estrela/rosca-estrela.mod
 
 import { ConexaoProvider } from '../providers/conexao/conexao';
 import { RotasProvider } from '../providers/rotas/rotas';
-import { CalculosProvider } from '../providers/calculos/calculos';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { ComprasProvider } from '../providers/compras/compras';
 import { ReceitasProvider } from '../providers/receitas/receitas';
@@ -73,7 +72,6 @@ import { ReceitasProvider } from '../providers/receitas/receitas';
     {provide: LOCALE_ID, useValue: 'pt-BR'},
     ConexaoProvider,
     RotasProvider,
-    CalculosProvider,
     ComprasProvider,
     ReceitasProvider
   ]

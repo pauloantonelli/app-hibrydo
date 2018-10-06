@@ -33,7 +33,6 @@ export class ComprasPage {
   } 
   ionViewDidEnter() {
     this.detectMudancaIngrediente();
-    this.totCompras = 'O peso total é: ' + (Number(this.valorCompras.farinhaTrigo) + Number(this.valorCompras.fareloTrigo));
   }
   verCompras(chave: string){
     return this.compraProvider.verCompras(chave);

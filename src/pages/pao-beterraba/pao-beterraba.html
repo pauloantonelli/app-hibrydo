@@ -26,7 +26,6 @@
         <h2>Ingredientes <br/> {{pagina[1]}}</h2>
     </ion-card-header>
     <div id="kilo">
-      <ion-label>{{totCompras}}</ion-label>
       <!--Gramas-->
       <ion-label stacked>{{titulo[0]}}</ion-label>
       <ion-item>
@@ -52,8 +51,22 @@
         <ion-input type="number" placeholder="ex 5" clearInput="true" [(ngModel)]="valorCompras.beterraba"></ion-input>
       </ion-item>
 
+      <ion-label stacked>{{titulo[30]}}</ion-label>
+      <ion-item>
+        <ion-label fixed>Gramas</ion-label>
+        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.fermentoBiologico"></ion-input>
+      </ion-item>
+
+      <ion-label stacked>{{titulo[32]}}</ion-label>
+      <ion-item>
+        <ion-label fixed>Gramas</ion-label>
+        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.goiabada"></ion-input>
+      </ion-item>
+
     </div>
+
     <hr />
+
     <div id="litro">
       <ion-label stacked>{{titulo[27]}}</ion-label>
       <ion-item>
@@ -69,18 +82,6 @@
         <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.ovo"></ion-input>
       </ion-item>
 
-      <ion-label stacked>{{titulo[30]}}</ion-label>
-      <ion-item>
-        <ion-label fixed>Gramas</ion-label>
-        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.fermentoBiologico"></ion-input>
-      </ion-item>
-
-      <ion-label stacked>{{titulo[32]}}</ion-label>
-      <ion-item>
-        <ion-label fixed>Gramas</ion-label>
-        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.goiabada"></ion-input>
-      </ion-item>
-
       <ion-label stacked>{{titulo[35]}}</ion-label>
       <ion-item>
         <ion-label fixed>Unidades</ion-label>
@@ -89,6 +90,53 @@
       <ion-note item-end>*numero de unidades aproximado</ion-note>
     </div>
   </ion-list>
+
+  <hr/>
+
+  <ion-card>
+    <ion-card-header id="ingredientes">
+      CUSTO POR INGREDIENTE
+    </ion-card-header>
+    <ion-card-content>
+      {{titulo[0]}}: R${{totIngredientes[0]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[3]}}: R${{totIngredientes[1]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[4]}}: R${{totIngredientes[2]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[6]}}: R${{totIngredientes[3]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[30]}}: R${{totIngredientes[4]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[32]}}: R${{totIngredientes[5]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[27]}}: R${{totIngredientes[6]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[29]}}: R${{totIngredientes[7]}}
+    </ion-card-content>
+    <ion-card-content>
+      {{titulo[35]}}: R${{totIngredientes[8]}}
+    </ion-card-content>
+  </ion-card>
+  
+  <hr />
+
+  <ion-card id="total">
+    <ion-card-header>
+      CUSTO TOTAL DA RECEITA
+    </ion-card-header>
+    <ion-card-content>
+      R${{totCompras}}
+    </ion-card-content>
+  </ion-card>
+
   <button ion-button block (click)="salvarIngrediente(chave, valorCompras)">Atualizar</button>
   <hr />
 </ion-content>

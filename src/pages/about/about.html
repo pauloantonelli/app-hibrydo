@@ -46,56 +46,14 @@
       </button>
     </ion-card-content>
   </ion-card>
-  <!--Card Meire-->
-  <ion-card>
-    <ion-card-header>
-      {{ nomes[2] }}
-    </ion-card-header>
-    <ion-card-content>
-      <button ion-button large>
-        <ion-icon name="logo-facebook" (click)="abrirFace(2)"></ion-icon>
-      </button>
-      <button ion-button large>
-        <ion-icon name="logo-twitter" (click)="abrirTwit(2)"></ion-icon>
-      </button>
-      <button ion-button large>
-        <ion-icon name="link" (click)="abrirLink(2)"></ion-icon>
-      </button>
-      <button ion-button large>
-        <ion-icon name="logo-whatsapp" (click)="abrirWhats(2)"></ion-icon>
-      </button>
-    </ion-card-content>
-  </ion-card>
-  <!--Card Ronaldo-->
-  <ion-card>
-    <ion-card-header>
-      {{ nomes[3] }}
-    </ion-card-header>
-    <ion-card-content>
-      <button ion-button large>
-        <ion-icon name="logo-facebook" (click)="abrirFace(3)"></ion-icon>
-      </button>
-      <button ion-button large>
-        <ion-icon name="logo-twitter" (click)="abrirTwit(3)"></ion-icon>
-      </button>
-      <button ion-button large>
-        <ion-icon name="link" (click)="abrirLink(3)"></ion-icon>
-      </button>
-      <button ion-button large>
-        <ion-icon name="logo-whatsapp" (click)="abrirWhats(3)"></ion-icon>
-      </button>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
 
-    <ion-card-header>
-      ATENCÃO!
-    </ion-card-header>
+  <ion-card-header>
+    ATENCÃO!
+  </ion-card-header>
 
-    <ion-card-content id="recomecar">
-      <p id="aviso">Caso queira deletar TODOS OS DADOS e RECOMECAR NOVAMENTE use o botão abaixo. 
+  <ion-card-content id="recomecar">
+    <p id="aviso">Caso queira deletar TODOS OS DADOS e RECOMECAR NOVAMENTE use o botão abaixo.
       Tenha em mente que os dados excluidos nao serão mais recuperados ao fazer esse procedimento</p>
-    </ion-card-content>
-    <button id="btnRecomecar" ion-button block (click)="zerarTudo()">Recomeçar</button>
-  </ion-card>
+  </ion-card-content>
+  <button id="btnRecomecar" ion-button block (click)="zerarTudo()">Recomeçar</button>
 </ion-content>

@@ -11,7 +11,6 @@
   <h1>Compras</h1>
   <ion-list>
     <div id="kilo">
-      <ion-label>{{totCompras}}</ion-label>
       <!--KILOS-->
       <ion-label stacked>{{titulo[0]}}</ion-label>
       <ion-item>
@@ -41,6 +40,16 @@
       <ion-item>
         <ion-label fixed>R$</ion-label>
         <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoAveiaFlocosGrossos"></ion-input>
+      </ion-item>
+
+      <ion-label stacked>{{titulo[36]}}</ion-label>
+      <ion-item>
+        <ion-label fixed>Kilos</ion-label>
+        <ion-input type="number" placeholder="ex 5" clearInput="true" [(ngModel)]="valorCompras.farinhaTrigoIntegral"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>R$</ion-label>
+        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoFarinhaTrigoIntegral"></ion-input>
       </ion-item>
 
       <ion-label stacked>{{titulo[3]}}</ion-label>
@@ -76,7 +85,7 @@
       <ion-label stacked>{{titulo[6]}}</ion-label>
       <ion-item>
         <ion-label fixed>Kilos</ion-label>
-        <ion-input type="number" placeholder="ex 5" clearInput="true" [(ngModel)]="beterraba"></ion-input>
+        <ion-input type="number" placeholder="ex 5" clearInput="true" [(ngModel)]="valorCompras.beterraba"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label fixed>R$</ion-label>
@@ -163,6 +172,16 @@
         <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoFuba"></ion-input>
       </ion-item>
 
+      <ion-label stacked>{{titulo[32]}}</ion-label>
+      <ion-item>
+          <ion-label fixed>Kilos</ion-label>
+        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.goiabada"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>R$</ion-label>
+        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoGoiabada"></ion-input>
+      </ion-item>
+
       <ion-label stacked>{{titulo[15]}}</ion-label>
       <ion-item>
         <ion-label fixed>Kilos</ion-label>
@@ -189,7 +208,7 @@
       <ion-label stacked>{{titulo[17]}}</ion-label>
       <ion-item>
         <ion-label fixed>Gramas</ion-label>
-        <ion-input type="number" placeholder="ex 1.250" clearInput="true" [(ngModel)]="cheiroVerde"></ion-input>
+        <ion-input type="number" placeholder="ex 1.250" clearInput="true" [(ngModel)]="valorCompras.cheiroVerde"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label fixed>R$</ion-label>
@@ -275,6 +294,46 @@
         <ion-label fixed>R$</ion-label>
         <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoCanelaBastao"></ion-input>
       </ion-item>
+
+      <ion-label stacked>{{titulo[30]}}</ion-label>
+      <ion-item>
+          <ion-label fixed>Gramas</ion-label>
+        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.fermentoBiologico"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>R$</ion-label>
+        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoFermentoBiologico"></ion-input>
+      </ion-item>
+
+      <ion-label stacked>{{titulo[31]}}</ion-label>
+      <ion-item>
+          <ion-label fixed>Gramas</ion-label>
+        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.fermentoQuimico"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>R$</ion-label>
+        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoFermentoQuimico"></ion-input>
+      </ion-item>
+
+      <ion-label stacked>{{titulo[33]}}</ion-label>
+      <ion-item>
+          <ion-label fixed>Gramas</ion-label>
+        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.margarina"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>R$</ion-label>
+        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoMargarina"></ion-input>
+      </ion-item>
+
+      <ion-label stacked>{{titulo[34]}}</ion-label>
+      <ion-item>
+          <ion-label fixed>Gramas</ion-label>
+        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.requeijaoCatupiry"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>R$</ion-label>
+        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoRequeijaoCatupiry"></ion-input>
+      </ion-item>
     </div>
 
     <hr/>
@@ -324,56 +383,6 @@
       <ion-item>
           <ion-label fixed>R$</ion-label>
         <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoOvo"></ion-input>
-      </ion-item>
-
-      <ion-label stacked>{{titulo[30]}}</ion-label>
-      <ion-item>
-          <ion-label fixed>Unidades</ion-label>
-        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.fermentoBiologico"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label fixed>R$</ion-label>
-        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoFermentoBiologico"></ion-input>
-      </ion-item>
-
-      <ion-label stacked>{{titulo[31]}}</ion-label>
-      <ion-item>
-          <ion-label fixed>Unidades</ion-label>
-        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.fermentoQuimico"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label fixed>R$</ion-label>
-        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoFermentoQuimico"></ion-input>
-      </ion-item>
-
-      <ion-label stacked>{{titulo[32]}}</ion-label>
-      <ion-item>
-          <ion-label fixed>Unidades</ion-label>
-        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.goiabada"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label fixed>R$</ion-label>
-        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoGoiabada"></ion-input>
-      </ion-item>
-
-      <ion-label stacked>{{titulo[33]}}</ion-label>
-      <ion-item>
-          <ion-label fixed>Unidades</ion-label>
-        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.margarina"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label fixed>R$</ion-label>
-        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoMargarina"></ion-input>
-      </ion-item>
-
-      <ion-label stacked>{{titulo[34]}}</ion-label>
-      <ion-item>
-          <ion-label fixed>Unidades</ion-label>
-        <ion-input type="number" placeholder="ex 10" clearInput="true" [(ngModel)]="valorCompras.requeijaoCatupiry"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label fixed>R$</ion-label>
-        <ion-input type="number" placeholder=" ex 10.50" clearInput="true" [(ngModel)]="valorCompras.precoRequeijaoCatupiry"></ion-input>
       </ion-item>
 
       <ion-label stacked>{{titulo[35]}}</ion-label>
