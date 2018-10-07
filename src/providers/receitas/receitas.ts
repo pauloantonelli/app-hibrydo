@@ -57,8 +57,11 @@ export class ReceitasProvider {
   verReceitas(chave: string) {
     return this.getPreparo(chave);
   }
-  zerarBanco(){
-    console.log('banco apagado');
-    return this.nativeStorage.clear();
-  }
+  /*zerarBanco(){
+    return this.nativeStorage.clear().then((res)=>{
+      console.log('banco apagado ' + res);
+    }).catch((e)=>{
+      console.error('erro ao apagar ' + e);
+    })
+  }*/
 }

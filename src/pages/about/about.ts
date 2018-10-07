@@ -30,14 +30,26 @@ export class AboutPage {
   ionViewDidLoad() {
 
   }
+  //MENSAGEM CONFIRMANDO A EXTINÇÃO DO BANCO DE DADOS LOCAL
+  /*mensagem(msg: string) {
+    this.toast.create({
+      message: msg,
+      duration: 3000, 
+      position: 'center'
+    }).present();
+  }
   zerarTudo() {
     this.deletarTudo.zerarBanco()
       .then(() => {
-          const loader = this.loadingCtrl.create({
-            content: "Apagando banco de dados aguarde...",
-            duration: 6000
-          });
-          loader.present();
+        const loader = this.loadingCtrl.create({
+          content: "Apagando banco de dados aguarde...",
+          duration: 6000
+        });
+        loader.present().then(()=>{
+          setTimeout(()=>{
+            this.mensagem('Dados apagados com sucesso!');
+          }, 6000);
+        })
       })
       .catch((e) => {
         this.toast.create({
@@ -46,5 +58,5 @@ export class AboutPage {
           position: 'botton'
         }).present();
       })
-  }
+  }*/
 }

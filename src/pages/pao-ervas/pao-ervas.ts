@@ -4,6 +4,7 @@ import { ConexaoProvider, Ingredientes } from '../../providers/conexao/conexao';
 import { ReceitasProvider } from '../../providers/receitas/receitas';
 import { ComprasProvider } from '../../providers/compras/compras';
 import { RotasProvider } from '../../providers/rotas/rotas';
+import { LoadingController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -30,7 +31,7 @@ export class PaoErvasPage {
   public valorCompras: Ingredientes;
   public totIngredientes = [];
   public valorIngredientes: Ingredientes;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public conexao: ConexaoProvider, public compraProvider: ComprasProvider, public receitaProvider: ReceitasProvider, public toast: ToastController, public rota: RotasProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public conexao: ConexaoProvider, public compraProvider: ComprasProvider, public receitaProvider: ReceitasProvider, public toast: ToastController, public rota: RotasProvider, public loadingCtrl: LoadingController) {
     this.valorCompras = new Ingredientes();
     this.valorIngredientes = new Ingredientes();
     this.chave = 'Pao de Ervas';
@@ -59,7 +60,7 @@ export class PaoErvasPage {
   }
   salvarIngrediente(chave: string, compras: Ingredientes) {//SALVA OS VALORES RELATIVOS AOS INGREDIENTE DO BANCO
     this.receitaProvider.salvarIngredientes(chave, compras);
-    this.mensagem('Atualizado com sucesso!');
+    this.presentLoading('Atualizando');
   }
   salvarReceita(chave: string, receita: string) {//SALVA OS VALORES RELATIVOS AOS INGREDIENTE DO BANCO
     this.receitaProvider.salvarReceitas(chave, receita);
@@ -149,11 +150,22 @@ export class PaoErvasPage {
       var aux = aux0 + aux1 + aux2 + aux3 + aux4 + aux5 + aux6 + aux7 + aux8 + aux9 + aux10 + aux11 + aux12 + aux13;
       this.totCompras = aux.toFixed(2);
     }
+  //MOSTRA O TOASTER CONFIRMANDO O SALVAMENTO DA RECEITA
   mensagem(msg: string) {
     this.toast.create({
       message: msg,
       duration: 3000,
       position: 'center'
     }).present();
+  }
+  //ATUALIZA O CARD COM OS DADOS E MOSTRA ANIMACAO DE ATUALIZACAO
+  presentLoading(msg: string) {
+    const loader = this.loadingCtrl.create({
+      content: msg,
+      duration: 1000
+    });
+    loader.present().then(()=>{
+      this.calculosValoresIngredientes();
+    })
   }
 }

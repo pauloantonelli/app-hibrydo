@@ -4,6 +4,7 @@ import { ConexaoProvider, Ingredientes } from '../../providers/conexao/conexao';
 import { ReceitasProvider } from '../../providers/receitas/receitas';
 import { ComprasProvider } from '../../providers/compras/compras';
 import { RotasProvider } from '../../providers/rotas/rotas';
+import { LoadingController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -30,7 +31,7 @@ export class PaoMacaPage {
   public valorCompras: Ingredientes;
   public totIngredientes = [];
   public valorIngredientes: Ingredientes;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public conexao: ConexaoProvider, public compraProvider: ComprasProvider, public receitaProvider: ReceitasProvider, public toast: ToastController, public rota: RotasProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public conexao: ConexaoProvider, public compraProvider: ComprasProvider, public receitaProvider: ReceitasProvider, public toast: ToastController, public rota: RotasProvider, public loadingCtrl: LoadingController) {
     this.valorCompras = new Ingredientes();
     this.valorIngredientes = new Ingredientes();
     this.chave = 'Pao de Maçã';
@@ -59,7 +60,7 @@ export class PaoMacaPage {
   }
   salvarIngrediente(chave: string, compras: Ingredientes) {//SALVA OS VALORES RELATIVOS AOS INGREDIENTE DO BANCO
     this.receitaProvider.salvarIngredientes(chave, compras);
-    this.mensagem('Atualizado com sucesso!');
+    this.presentLoading('Atualizando');
   }
   salvarReceita(chave: string, receita: string) {//SALVA OS VALORES RELATIVOS AOS INGREDIENTE DO BANCO
     this.receitaProvider.salvarReceitas(chave, receita);
@@ -79,21 +80,21 @@ export class PaoMacaPage {
     this.btnEdit = 'block';
     this.btnSalv = 'none';
   }
-  detectaMudancaReceita(){
-        //RECUPERA OS DADOS RELATIVO A TECNICA DE PREPARO DA RECEITA
-        this.valorReceita(this.chaveReceita).then((resultado: any) => {
-          if (resultado.receita == undefined || resultado.receita == "") {//RECUPEROU E REPASSOU O DADO MESMO COM ESSE 'ERRO'
-            this.salvarReceita(this.chaveReceita, this.receitasIni);
-            this.conteudoCard = this.receitasIni;
-          } else {
-            this.conteudoCard = resultado.receita;//RECUPEROU E REPASSOU O DADO MESMO COM ESSE 'ERRO'
-          }
-        })
-          .catch((e) => {
-            console.error(e);
-          })
+  detectaMudancaReceita() {
+    //RECUPERA OS DADOS RELATIVO A TECNICA DE PREPARO DA RECEITA
+    this.valorReceita(this.chaveReceita).then((resultado: any) => {
+      if (resultado.receita == undefined || resultado.receita == "") {//RECUPEROU E REPASSOU O DADO MESMO COM ESSE 'ERRO'
+        this.salvarReceita(this.chaveReceita, this.receitasIni);
+        this.conteudoCard = this.receitasIni;
+      } else {
+        this.conteudoCard = resultado.receita;//RECUPEROU E REPASSOU O DADO MESMO COM ESSE 'ERRO'
+      }
+    })
+      .catch((e) => {
+        console.error(e);
+      })
   }
-  detectMudancaIngrediente(){
+  detectMudancaIngrediente() {
     //RECUPERA OS DADOS RELATIVO AOS INGREDIENTES DA RECEITA
     this.valorIngrediente(this.chave).then((resultado: Ingredientes) => {
       if (resultado == undefined) {
@@ -106,46 +107,57 @@ export class PaoMacaPage {
         console.error(e);
       })
   }
-  consultaCompras(chave: string){
-    this.valorIngrediente(chave).then((precos: Ingredientes)=>{
+  consultaCompras(chave: string) {
+    this.valorIngrediente(chave).then((precos: Ingredientes) => {
       this.valorIngredientes = precos;
     })
-    .catch((e)=>{
-      console.log("erro ao consultar os precos das compras " + e);
-    })
+      .catch((e) => {
+        console.log("erro ao consultar os precos das compras " + e);
+      })
   }
-    //CALCULA OS VALORES DOS INGREDIENTES USADOS E DA O VALOR EM R$
-    calculosValoresIngredientes(){
-      var aux0 = this.valorCompras.farinhaTrigo * this.valorIngredientes.precoFarinhaTrigo / Number(this.valorIngredientes.farinhaTrigo * 1000);
-      this.totIngredientes[0] = aux0.toFixed(2);
-      var aux1 = this.valorCompras.acucar * this.valorIngredientes.precoAcucar / Number(this.valorIngredientes.acucar * 1000);
-      this.totIngredientes[1] = aux1.toFixed(2);
-      var aux2 = this.valorCompras.sal * this.valorIngredientes.precoSal / Number(this.valorIngredientes.sal * 1000);
-      this.totIngredientes[2] = aux2.toFixed(2);
-      var aux3 = this.valorCompras.maca * this.valorIngredientes.precoMaca / Number(this.valorIngredientes.maca * 1000);
-      this.totIngredientes[3] = aux3.toFixed(2);
-      var aux4 = this.valorCompras.fermentoBiologico * this.valorIngredientes.precoFermentoBiologico / this.valorIngredientes.fermentoBiologico;
-      this.totIngredientes[4] = aux4.toFixed(2);
-      var aux5 = this.valorCompras.uva * this.valorIngredientes.precoUva / Number(this.valorIngredientes.uva * 1000);
-      this.totIngredientes[5] = aux5.toFixed(2);
-      var aux6 = this.valorCompras.canelaPo * this.valorIngredientes.precoCanelaPo / this.valorIngredientes.canelaPo;
-      this.totIngredientes[6] = aux6.toFixed(2);
-      var aux7 = this.valorCompras.oleo * this.valorIngredientes.precoOleo / Number(this.valorIngredientes.oleo * 1000);
-      this.totIngredientes[7] = aux7.toFixed(2);
-      var aux8 = this.valorCompras.ovo * this.valorIngredientes.precoOvo / this.valorIngredientes.ovo;
-      this.totIngredientes[8] = aux8.toFixed(2);
-      var aux9 = this.valorCompras.embalagem * this.valorIngredientes.precoEmbalagem /this.valorIngredientes.embalagem;
-      this.totIngredientes[9] = aux9.toFixed(2);
+  //CALCULA OS VALORES DOS INGREDIENTES USADOS E DA O VALOR EM R$
+  calculosValoresIngredientes() {
+    var aux0 = this.valorCompras.farinhaTrigo * this.valorIngredientes.precoFarinhaTrigo / Number(this.valorIngredientes.farinhaTrigo * 1000);
+    this.totIngredientes[0] = aux0.toFixed(2);
+    var aux1 = this.valorCompras.acucar * this.valorIngredientes.precoAcucar / Number(this.valorIngredientes.acucar * 1000);
+    this.totIngredientes[1] = aux1.toFixed(2);
+    var aux2 = this.valorCompras.sal * this.valorIngredientes.precoSal / Number(this.valorIngredientes.sal * 1000);
+    this.totIngredientes[2] = aux2.toFixed(2);
+    var aux3 = this.valorCompras.maca * this.valorIngredientes.precoMaca / Number(this.valorIngredientes.maca * 1000);
+    this.totIngredientes[3] = aux3.toFixed(2);
+    var aux4 = this.valorCompras.fermentoBiologico * this.valorIngredientes.precoFermentoBiologico / this.valorIngredientes.fermentoBiologico;
+    this.totIngredientes[4] = aux4.toFixed(2);
+    var aux5 = this.valorCompras.uva * this.valorIngredientes.precoUva / Number(this.valorIngredientes.uva * 1000);
+    this.totIngredientes[5] = aux5.toFixed(2);
+    var aux6 = this.valorCompras.canelaPo * this.valorIngredientes.precoCanelaPo / this.valorIngredientes.canelaPo;
+    this.totIngredientes[6] = aux6.toFixed(2);
+    var aux7 = this.valorCompras.oleo * this.valorIngredientes.precoOleo / Number(this.valorIngredientes.oleo * 1000);
+    this.totIngredientes[7] = aux7.toFixed(2);
+    var aux8 = this.valorCompras.ovo * this.valorIngredientes.precoOvo / this.valorIngredientes.ovo;
+    this.totIngredientes[8] = aux8.toFixed(2);
+    var aux9 = this.valorCompras.embalagem * this.valorIngredientes.precoEmbalagem / this.valorIngredientes.embalagem;
+    this.totIngredientes[9] = aux9.toFixed(2);
 
-      //CALCULA O VALOR R$ TOTAL USADO NA RECEITA
-      var aux = aux0 + aux1 + aux2 + aux3 + aux4 + aux5 + aux6 + aux7 + aux8 + aux9;
-      this.totCompras = aux.toFixed(2);
-    }
+    //CALCULA O VALOR R$ TOTAL USADO NA RECEITA
+    var aux = aux0 + aux1 + aux2 + aux3 + aux4 + aux5 + aux6 + aux7 + aux8 + aux9;
+    this.totCompras = aux.toFixed(2);
+  }
+  //MOSTRA O TOASTER CONFIRMANDO O SALVAMENTO DA RECEITA
   mensagem(msg: string) {
     this.toast.create({
       message: msg,
       duration: 3000,
       position: 'center'
     }).present();
+  }
+  //ATUALIZA O CARD COM OS DADOS E MOSTRA ANIMACAO DE ATUALIZACAO
+  presentLoading(msg: string) {
+    const loader = this.loadingCtrl.create({
+      content: msg,
+      duration: 1000
+    });
+    loader.present().then(() => {
+      this.calculosValoresIngredientes();
+    })
   }
 }

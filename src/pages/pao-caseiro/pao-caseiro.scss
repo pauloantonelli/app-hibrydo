@@ -1,6 +1,11 @@
 page-pao-caseiro {
-    h1, h2, ion-label{
+    .card-md h1{
         text-align: center;
+        font-weight: bold;
+        font-size: 2.6rem;
+    }
+    .card-md p{
+        font-size: 1.6rem;
     }
     h3, #ingredientes, #total{
         text-align: center;
@@ -10,8 +15,42 @@ page-pao-caseiro {
     .input-ios, .input-md, .input-wp{
         background-color: color($colors, light);
     }
-    div{
-        //background-color: color($colors, light);
+    .card-md{
+        background: #74BF42;
+    }
+    .card-header-md{
+        color: #fff;
+        background-color: #74BF42;
+    }
+    ion-list{
+        text-align: center;
+    }
+    .list-md .item-block, .item-inner{
+        border-bottom: 2px solid #74BF42;
+    }
+    .list-md .item-input:last-child{
+        border-bottom: 2px solid #74BF42;
+    }
+    .input-md{
+        background-color: #fff;
+    }
+    .button-md{
+        background-color: #007B3F;
+    }
+    .label-md[stacked]{
+        color: #74BF42;
+        font-weight: bold;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+    .card-content-md{
+        font-size: 1.6rem;
+    }
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+        color: #74BF42;
+    }
+    .content-md{
+        color: #fff;
     }
     ::-webkit-input-placeholder{
         text-align: center;

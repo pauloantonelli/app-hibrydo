@@ -34,11 +34,13 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  primary:    #74BF42,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  btnSobre:   #74BF42,
+  tipografia: #fff
 );
 
 
@@ -52,10 +54,27 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
-
-
-
+$toolbar-background: #74BF42;
+$tabs-background: #007B3F;
+$select-md-icon-color: #fff;
+$tabs-md-tab-color-inactive: #D0D2D4;
+$tabs-md-tab-opacity: .6;
+$tabs-md-tab-icon-color: rgba($tabs-md-tab-color-inactive, $tabs-md-tab-opacity);
+$tabs-md-tab-color-active: #fff;
+$tabs-md-tab-icon-color-active: $tabs-md-tab-color-active;
+$list-background-color: #fff; //$toolbar-background;
+$list-md-background-color: 	$list-background-color;
+$background-color: #fff; //$toolbar-background;
+$outer-content-md-background-color: $background-color;
+$button-md-background-color: $toolbar-background;//$tabs-md-tab-color-active;
+$button-md-clear-text-color: $button-md-background-color;
+$list-text-color: $toolbar-background;
+$list-md-text-color: $list-text-color;
+$card-md-header-color: #fff;
+$card-md-text-color: #fff;
+//$list-md-background-color: #74BF42;
+$card-md-background-color: $list-md-background-color;
+$text-input-md-input-clear-icon-color: red;
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
